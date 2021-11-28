@@ -14,33 +14,30 @@ and open the template in the editor.
         <style type="text/css">
             *{
                 box-sizing: border-box;
+                font-family: arial;
             }
             body{
                 margin: 0 auto !important;
                 padding: 0;
             }
             .header{ 
+                width: 100%;
                 margin: 0;
                 padding: 0;
                 background: #1abc9c;
+                min-height: 50px;
             }
             .header h1{
                 margin-top: 0;
             }
             .header p{
                 text-align: left;
-                font-family: Gill Sans Ultra Bold;
                 padding: 10px;
-            }
-            head{
-                margin: 0;
-                padding: 0;
             }
             .topnav {
                 overflow: hidden;
                 background-color: #333;
               }
-
             .topnav a {
                 float: left;
                 color: #f2f2f2;
@@ -49,19 +46,25 @@ and open the template in the editor.
                 text-decoration: none;
                 font-size: 17px;
             }
-
             .topnav a:hover {
                 background-color: #ddd;
                 color: black;
             }
-
             .topnav a.active {
                 background-color: #089c7c;
                 color: white;
             }
+            .topnav a.ifLoggedIn{
+                float: right;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
             .logo{
-                width: 25%;
-                height: auto;
+                display: inline-block;
+                width: 350px;
             }
             .column{
                 float: left;
@@ -74,34 +77,57 @@ and open the template in the editor.
             }
             /* Set width length for the left, right and middle columns */
             .left {
-                min-width: 30%;
+                width: 30%;
             }
             .middle {
-                min-width: 50%;
+                min-width: 40%;
+                text-align: center;
+                justify-content: center;
             }
             .right {
-                min-width: 20%;
+                min-width: 10%;
+                float: right;
+            }
+            label, input, form, button{
+                margin: 5px;
+                font-size: 17px;
+                text-align: left;
             }
         </style>
         <script type="text/javascript" src="/functies.js"></script>
     </head>
     <body>
         <div class="header" >
-            <div>
-                <img class="logo" src="/art/logo.png" alt="Home Brewery Logo">
-                
-                <div class="search-container">
+            <!--<img class="logo" style="display:inline-block" src="/art/logo.png" alt="Home Brewery Logo">-->
+            <div class="row">
+                <div class="column left">
+                    <img class="logo", src="/art/logo.png" alt="Home Brewery Logo">
+                </div>
+                <form class="column middle" action="">
+                    <input type="text", id="search", name="search", style="width: 80%; margin-right: 0px;">
+                    <input type="submit" value="Search", style="margin-right: 0px;">
+                </form>
+                <div class="column right", style="text-align: left;">
                     <form action="">
-                        <input type="text" placeholder="Search..." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <label for="username">Username:</label>
+                        <input type="text", id="username", name="username"><br>
+                        <label for="password">Password:</label>
+                        <input type="password", id="password", name="password"><br>
+                        <input type="submit", value="Login">
                     </form>
+                <button>Register</button>
                 </div>
             </div>
+            
+            
             <div class="topnav">
                 <a href="#home">Home</a>
                 <a class="active" href="#beers">Beers</a>
                 <a href="#breweries">Breweries</a>
                 <a href="#food">Food</a>
+                
+                <a class="ifLoggedIn" href="#recipes">My Recipes</a>
+                <a class="ifLoggedIn" href="#activeBrews">My Active Brews</a>
             </div>
             <!--<p>@yield("subtitle")</p>-->
         </div>
