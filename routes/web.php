@@ -19,4 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/beer', [BeerController::class, 'showBeer']);
-Route::get('/listofbeers', [BeerController::class, 'listOfBeers']);
+Route::get('/beers', [BeerController::class, 'beers']);

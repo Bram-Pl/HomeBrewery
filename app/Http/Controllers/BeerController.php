@@ -36,7 +36,7 @@ class BeerController extends Controller
         echo("Dorser: Wild Wardje");
     }
     
-    public function listOfBeers(){
+    public function beers(){
         return(view('Beer.index'));
     }
 

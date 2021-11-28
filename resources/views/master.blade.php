@@ -12,6 +12,9 @@ and open the template in the editor.
         <link rel="shortcut icon" type="image/x-icon" href="/art/ico.ico" />
         <link rel="stylesheet" href="/styles.css">
         <style type="text/css">
+            *{
+                box-sizing: border-box;
+            }
             body{
                 margin: 0 auto !important;
                 padding: 0;
@@ -20,7 +23,6 @@ and open the template in the editor.
                 margin: 0;
                 padding: 0;
                 background: #1abc9c;
-                align-content: center;
             }
             .header h1{
                 margin-top: 0;
@@ -34,41 +36,67 @@ and open the template in the editor.
                 margin: 0;
                 padding: 0;
             }
-            .Logo{
-                width: 20%;
-                height: auto;
-                margin: 10px;
-            }
             .topnav {
                 overflow: hidden;
                 background-color: #333;
               }
 
-              .topnav a {
+            .topnav a {
                 float: left;
                 color: #f2f2f2;
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
                 font-size: 17px;
-              }
+            }
 
-              .topnav a:hover {
+            .topnav a:hover {
                 background-color: #ddd;
                 color: black;
-              }
+            }
 
-              .topnav a.active {
+            .topnav a.active {
                 background-color: #089c7c;
                 color: white;
-              }
+            }
+            .logo{
+                width: 25%;
+                height: auto;
+            }
+            .column{
+                float: left;
+                padding: 5px;
+            }
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            /* Set width length for the left, right and middle columns */
+            .left {
+                min-width: 30%;
+            }
+            .middle {
+                min-width: 50%;
+            }
+            .right {
+                min-width: 20%;
+            }
         </style>
         <script type="text/javascript" src="/functies.js"></script>
     </head>
     <body>
-        <!--<h1 style="text-align: right;">Home Brewery</h1>-->
         <div class="header" >
-            <img class="Logo" src="/art/logo.png" alt="Home Brewery Logo">
+            <div>
+                <img class="logo" src="/art/logo.png" alt="Home Brewery Logo">
+                
+                <div class="search-container">
+                    <form action="">
+                        <input type="text" placeholder="Search..." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
             <div class="topnav">
                 <a href="#home">Home</a>
                 <a class="active" href="#beers">Beers</a>
