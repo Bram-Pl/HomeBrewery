@@ -71,9 +71,9 @@ and open the template in the editor.
             <img class="Logo" src="/art/logo.png" alt="Home Brewery Logo">
             <div class="topnav">
                 <a href="#home">Home</a>
-                <a class="active" href="#listofbeers">List Of Beers</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
+                <a class="active" href="#beers">Beers</a>
+                <a href="#breweries">Breweries</a>
+                <a href="#food">Food</a>
             </div>
             <!--<p>@yield("subtitle")</p>-->
         </div>
