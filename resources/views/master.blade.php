@@ -88,6 +88,11 @@ and open the template in the editor.
                 min-width: 10%;
                 float: right;
             }
+            .user{
+                font-size: 30px;
+                margin: 1px;
+                color: #FFFFFF;
+            }
             label, input, form, button{
                 margin: 5px;
                 font-size: 17px;
@@ -108,26 +113,47 @@ and open the template in the editor.
                     <input type="submit" value="Search", style="margin-right: 0px;">
                 </form>
                 <div class="column right", style="text-align: left;">
-                    <form action="">
-                        <label for="username">Username:</label>
-                        <input type="text", id="username", name="username"><br>
-                        <label for="password">Password:</label>
-                        <input type="password", id="password", name="password"><br>
-                        <input type="submit", value="Login">
+                    <!--echo $user->id;
+
+                    echo $user->name;
+
+                    echo $user->email;-->
+                    @auth
+                    <p class="user">{{$user->name}}</p>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <div class="nav-item">
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        this.closest('form').submit(); " role="button">
+                                <i class="fas fa-sign-out-alt"></i>
+
+                                {{ __('Log Out') }}
+                            </a>
+                        </div>
                     </form>
-                <button>Register</button>
+                    @else
+                    <form method="GET" action="{{ route('login') }}">
+                        <a class="btn btn-primary" style="color: #f2f2f2" href="{{ route('login') }}">Login</a><br>
+                    </form>
+                    <form method="GET" action="{{ route('register') }}">
+                        <a class="btn btn-primary" style="color: #f2f2f2" href="{{ route('register') }}">Register</a><br>
+                    </form>
+                    @endauth
                 </div>
             </div>
             
             
             <div class="topnav">
-                <a href="#home">Home</a>
-                <a class="active" href="#beers">Beers</a>
+                <a href="beers">Home</a>
+                <a class="active" href="all">Beers</a>
                 <a href="#breweries">Breweries</a>
                 <a href="#food">Food</a>
                 
+                @auth
                 <a class="ifLoggedIn" href="#recipes">My Recipes</a>
                 <a class="ifLoggedIn" href="#activeBrews">My Active Brews</a>
+                @else
+                @endauth
             </div>
             <!--<p>@yield("subtitle")</p>-->
         </div>

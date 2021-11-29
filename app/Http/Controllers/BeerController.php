@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 
 class BeerController extends Controller
 {
@@ -37,7 +38,13 @@ class BeerController extends Controller
     }
     
     public function beers(){
-        return(view('Beer.index'));
+        $user = Auth::user();
+        return(view('Beer.index')->with("user",$user));
+    }
+    
+    public function allBeers(){
+        $user = Auth::user();
+        return(view('Beer.all')->with("user",$user));
     }
 
 }

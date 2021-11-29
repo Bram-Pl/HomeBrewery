@@ -20,3 +20,8 @@ Route::get('/', function () {
 
 Route::get('/beer', [BeerController::class, 'showBeer']);
 Route::get('/beers', [BeerController::class, 'beers']);
+Route::get('/all', [BeerController::class, 'allBeers']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
