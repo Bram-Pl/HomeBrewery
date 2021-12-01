@@ -142,12 +142,16 @@ and open the template in the editor.
                     <?php endif; ?>
                 </div>
             </div>
-            @echo ("subtitle")
+            
+            
             <div class="topnav">
                 <a href="beers">Home</a>
                 <a class="active" href="all">Beers</a>
                 <a href="#breweries">Breweries</a>
                 <a href="#food">Food</a>
+                <a href="upload">upload</a>
+                <a href="nameandid">nameandid</a>
+                
                 
                 <?php if(auth()->guard()->check()): ?>
                 <a class="ifLoggedIn" href="#recipes">My Recipes</a>

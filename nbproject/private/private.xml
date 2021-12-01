@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/HomeBrewery/resources/views/layouts/guest.blade.php</file>
+            <file>file:/C:/xampp/htdocs/HomeBrewery/app/Http/Controllers/nameandidcontroller.php</file>
+            <file>file:/C:/xampp/htdocs/HomeBrewery/.env</file>
+            <file>file:/C:/xampp/htdocs/HomeBrewery/storage/framework/views/aa25f9bb663f280ab1ef6c5c0cf45c5fdd168159.php</file>
+            <file>file:/C:/xampp/htdocs/HomeBrewery/public/css/app.css</file>
+            <file>file:/C:/xampp/htdocs/HomeBrewery/app/Http/Controllers/BeerController.php</file>
+            <file>file:/C:/xampp/htdocs/HomeBrewery/vendor/autoload.php</file>
+            <file>file:/C:/xampp/htdocs/HomeBrewery/public/functies.js</file>
+            <file>file:/C:/xampp/htdocs/HomeBrewery/resources/views/welcome.blade.php</file>
+            <file>file:/C:/xampp/htdocs/HomeBrewery/resources/views/master.blade.php</file>
+        </group>
     </open-files>
 </project-private>

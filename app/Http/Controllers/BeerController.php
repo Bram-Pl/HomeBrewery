@@ -46,5 +46,33 @@ class BeerController extends Controller
         $user = Auth::user();
         return(view('Beer.all')->with("user",$user));
     }
-
+    public function upload()
+    {   
+        $user = Auth::user();
+        return view('Beer.BeerForm')->with("user",$user);
+    }
+    
+    
+    
+public function InsertBeers(Request $request){
+    $name = $request->input('name');
+    $tagline = $request->input('tagline');
+    $first_brewed = $request->input('first_brewed');
+    $Description = $request->input('Description');
+    $image_url = $request->input('image_url');
+    $abv = $request->input('abv');
+    $ibu = $request->input('ibu');
+    $target_fg = $request->input('target_fg');
+    $target_og = $request->input('target_og');
+    $ebc = $request->input('ebc');
+    $srm = $request->input('srm');
+    $ph = $request->input('ph');
+    $attenuation_level = $request->input('attenuation_level');
+    $boil_volume = $request->input('boil_volume');
+    $ingredients = $request->input('ingredients');
+    $food_pairing = $request->input('food_pairing');
+    $brewers_tips = $request->input('brewers_tips');
+    $contributed_by = $request->input('contributed_by');
+}
+   
 }

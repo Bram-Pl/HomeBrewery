@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\nameandidcontroller; 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BeerController;
+use App\Http\Controllers\BeerController; 
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +27,7 @@ Route::get('/all', [BeerController::class, 'allBeers']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+Route::get('/upload', [BeerController::class, 'upload']);
+Route::get('/nameandid', [nameandidcontroller::class, 'nameandidform']);
+//Route::view('/nameandid', '/beer/nameandid');
+Route::post('/insertname', [nameandidcontroller::class, 'insertname']);
