@@ -32,6 +32,11 @@ class nameandidcontroller extends Controller
         echo($message);
         return view('Beer.nameandid')->with($user);
     }
+    public function insertnameservice($name){
+        $data=array('name' => $name);
+        $id = DB::table('nameandid')->insertGetId($data);
+        return ($id); 
+    }
 }
 
 

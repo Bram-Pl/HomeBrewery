@@ -4,10 +4,11 @@
 
 <?php $__env->startSection("content"); ?>
 <html>
-<form action="/insertname" method = "POST">
+<form action="/insertname" method = "post">
     <?php echo csrf_field(); ?>
-    <input type="text" name ="name" id ="name" placeholder = "name"/><br/>
+    <input type="text" name ="name" id = "name" placeholder = "name"/><br/>
     <button type = "submit">Submit</button>
+    <button type ="button" onclick = "uploadNameAsync()"><strong>upload via javascript</strong></button>
 </form>
 </html>
 <?php $__env->stopSection(); ?>
