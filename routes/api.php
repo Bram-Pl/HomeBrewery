@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\nameandidcontroller;
+use App\Http\Controllers\BeerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get("/nameAndId/{name}",[nameandidcontroller::class, 'insertnameservice']);
+Route::post("/nameAndIdPost",[nameandidcontroller::class, 'insertnameservicePost']);
+Route::post("/BeerPost",[BeerController::class,'insertBeerServicePost']);
+//Route::post("/BeerPost",[BeerController::class,'insertnameservicePost']);

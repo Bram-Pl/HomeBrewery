@@ -16,6 +16,7 @@ class CreateNameandidTable extends Migration
         Schema::create('nameandid', function (Blueprint $table) {
             $table->id();
             $table->text('name');
+            $table->integer('number');
         });
     }
 

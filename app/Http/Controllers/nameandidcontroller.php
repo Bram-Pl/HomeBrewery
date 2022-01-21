@@ -37,6 +37,16 @@ class nameandidcontroller extends Controller
         $id = DB::table('nameandid')->insertGetId($data);
         return ($id); 
     }
+    public function insertnameservicePost(Request $req){
+        $name = $req->input('name');
+        $lastname = $req->input('lastname');
+        $number = $req->input('number');
+        $data=array('name' => $name,'number' => $number);
+        $id = DB::table('nameandid')->insertGetId($data);
+        $arr = array('name' => $name,'lastname' =>$lastname);
+        $message = json_encode($arr);
+        return ($message); 
+    }
 }
 
 

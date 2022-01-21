@@ -15,25 +15,35 @@ class CreateBeersTable extends Migration
     {
         Schema::create('beers', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
-            $table->text("tagline");
-            $table->string("first_brewed");
-            $table->string("Description");
-            $table->string("image_url");
-            $table->float("abv");
-            $table->integer("ibu");
-            $table->integer("target_fg");
-            $table->integer("target_og");
-            $table->integer("ebc");
-            $table->integer("srm");
-            $table->float("ph");
-            $table->float("attenuation_level");
-            $table->integer("boil_volume");
+            $table->text('name')->default('indefined')->unique();
+            $table->text("tagline")->default('indefined');
+            $table->string("first_brewed")->default('indefined');
+            $table->string("Description")->default('indefined');
+            $table->string("image_url")->default('indefined');
+            $table->float("abv")->default('0');
+            $table->integer("ibu")->default('0');
+            $table->integer("target_fg")->default('0');
+            $table->integer("target_og")->default('0');
+            $table->integer("ebc")->default('0');
+            $table->integer("srm")->default('0');
+            $table->float("ph")->default('0');
+            $table->float("attenuation_level")->default('0');
+            $table->integer("boil_volume")->default('0');
 //            $table->id("method");
-            $table->json("ingredients");
-            $table->string("food_pairing");
-            $table->string("brewers_tips");
-            $table->integer("contributed_by");
+//            $table->json("ingredients");
+            $table->string("food_pairing")->default('indefined');
+            $table->string("brewers_tips")->default('indefined');           
+            $table->string("malt_name")->default('indefined');
+            $table->float("malt_amount")->default('0');
+            $table->string("malt_unit")->default('indefined');
+            $table->string("hops_name")->default('indefined');
+            $table->float("hops_amount")->default('0');
+            $table->string("hops_unit")->default('indefined');
+            $table->string("yeast_name")->default('indefined');
+            $table->float("yeast_amount")->default('0');
+            $table->string("yeast_unit")->default('indefined');
+            
+            $table->integer("contributed_by")->default('0');
         });
     }
 
