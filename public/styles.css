@@ -8,3 +8,59 @@ and open the template in the editor.
     Author     : pless
 */
 
+* {
+  box-sizing: border-box;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+}
+/* Create three equal columns that floats next to each other */
+.displaybeerscol0 {
+  float: left;
+  height: 250px;
+  padding: 0px;
+  padding-left: 1%;
+  min-width: 350px;
+}
+.displaybeerscol1 {
+  float: left;
+  padding: 20px;
+  height: 200px;
+  width: 325px;
+  justify-content: center;
+}
+
+.displaybeerscol2 {
+   
+  float: left;
+  background-color:#0F0B04;
+  width: 900px;
+}
+
+.displaybeerscol3 {
+  width: 100px;
+  padding: 10px;
+}
+.displaybeerscol3 label{
+    font-weight: bolder;
+    font-size: 20pt;
+    margin-left: 50px;
+}
+
+/* Clear floats after the columns */
+.displaybeers:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.displaybeers {
+    padding: 15px
+}
