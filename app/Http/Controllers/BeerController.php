@@ -17,7 +17,8 @@ class BeerController extends Controller
      */
     public function index()
     {
-        // TODO
+        $user = Auth::user();
+        return(view('/index')->with("user",$user));
     }
 
     /**
@@ -61,6 +62,16 @@ class BeerController extends Controller
     {   
         $user = Auth::user();
         return view('Beer.BeerForm')->with("user",$user);
+    }
+    public function breweries()
+    {
+        $user = Auth::user();
+        return(view('Beer.breweries')->with("user",$user));
+    }
+    public function recipes()
+    {
+        $user = Auth::user();
+        return(view('Beer.recipes')->with("user",$user));
     }
     
     

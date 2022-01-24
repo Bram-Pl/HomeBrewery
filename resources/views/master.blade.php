@@ -19,13 +19,17 @@ and open the template in the editor.
             body{
                 margin: 0 auto !important;
                 padding: 0;
+                background-image: url('/art/background.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
             }
             .header{ 
                 width: 100%;
                 margin: 0;
                 padding: 0;
                 background: #1abc9c;
-                min-height: 50px;
+                min-height: 60px;
             }
             .header h1{
                 margin-top: 0;
@@ -37,6 +41,7 @@ and open the template in the editor.
             .topnav {
                 overflow: hidden;
                 background-color: #333;
+                height: 50px;
               }
             .topnav a {
                 float: left;
@@ -48,23 +53,27 @@ and open the template in the editor.
             }
             .topnav a:hover {
                 background-color: #ddd;
+                height: 50px;
                 color: black;
             }
             .topnav a.active {
-                background-color: #089c7c;
+                background-color: #1abc9c;
                 color: white;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                height: 50px;
             }
             .topnav a.ifLoggedIn{
                 float: right;
                 color: #f2f2f2;
                 text-align: center;
-                padding: 14px 16px;
+                padding: 15px 15px;
                 text-decoration: none;
                 font-size: 17px;
             }
             .logo{
                 display: inline-block;
-                width: 350px;
+                width: 300px;
             }
             .column{
                 float: left;
@@ -98,23 +107,47 @@ and open the template in the editor.
                 font-size: 17px;
                 text-align: left;
             }
+            .buttonAuth{
+                font-size: 18pt;
+                color: white;
+                border: 2px;
+                border-color: #333;
+                text-decoration: none;
+            }
+            .buttonAuth:visited{
+                color: white;
+            }
+            .searchbar {
+                width: 80%;
+                margin-right: 0px;
+                border-radius: 20px;
+                text-align: center;
+                border-color: #1abc9c;
+            }
+            .searchbutton {
+                border-color: #1abc9c;
+                background-color: white;
+                color: #1a4d44;
+                border-radius: 5px;
+            }
         </style>
         <script type="text/javascript" src="/functies.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <script type="text/javascript">
             function changeActive(object){
                 //window.alert(object.location.pathname);
                 //window.alert(object.location.pathname === '/beers');
-                if(object.location.pathname === '/beers'){
+                if(object.location.pathname === '/index'){
                     document.getElementById('Home').classList.add("active");
                 } else if(object.location.pathname === '/all') {
                     document.getElementById('Beers').classList.add("active");
                 } else if(object.location.pathname === '/upload') {
                     document.getElementById('upload').classList.add("active");
-                } /*else if(object.location.pathname === '/upload') {
-                    document.getElementById('myRecipes').classList.add("active");
-                } else if(object.location.pathname === '/upload') {
-                    document.getElementById('myActiveBrews').classList.add("active");
-                }*/
+                } else if(object.location.pathname === '/recipes') {
+                    document.getElementById('Recipes').classList.add("active");
+                } else if(object.location.pathname === '/breweries') {
+                    document.getElementById('Breweries').classList.add("active");
+                }
             }
         </script>
     </head>
@@ -123,11 +156,14 @@ and open the template in the editor.
             <!--<img class="logo" style="display:inline-block" src="/art/logo.png" alt="Home Brewery Logo">-->
             <div class="row">
                 <div class="column left">
-                    <img class="logo", src="/art/logo.png" alt="Home Brewery Logo">
+                    <a href="index">
+                        <img class="logo", src="/art/logo.png" alt="Home Brewery Logo">
+                    </a>
                 </div>
+                
                 <form class="column middle" action="">
-                    <input type="text", id="search", name="search", style="width: 80%; margin-right: 0px;">
-                    <input type="submit" value="Search", style="margin-right: 0px;">
+                    <input type="text", id="search", name="search", class="searchbar">
+                    <input type="submit" value="SEARCH", class="searchbutton">
                 </form>
                 <div class="column right", style="text-align: left;">
                     <!--echo $user->id;
@@ -140,7 +176,7 @@ and open the template in the editor.
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <div class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <a class="nav-link buttonAuth" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         this.closest('form').submit(); " role="button">
                                 <i class="fas fa-sign-out-alt"></i>
 
@@ -150,21 +186,24 @@ and open the template in the editor.
                     </form>
                     @else
                     <form method="GET" action="{{ route('login') }}">
-                        <a class="btn btn-primary" style="color: #f2f2f2" href="{{ route('login') }}">Login</a><br>
+                        <a class="btn btn-primary buttonAuth" style="color: #f2f2f2;" href="{{ route('login') }}">Login</a><br>
                     </form>
                     <form method="GET" action="{{ route('register') }}">
-                        <a class="btn btn-primary" style="color: #f2f2f2" href="{{ route('register') }}">Register</a><br>
+                        <a class="btn btn-primary buttonAuth" style="color: #f2f2f2" href="{{ route('register') }}">Register</a><br>
                     </form>
                     @endauth
                 </div>
             </div>
                        
             <div class="topnav">
-                <a id="Home" href="beers">Home</a>
+                <a id="Home" href="index">Home</a>
                 <a id="Beers" href="all">Beers</a>
-                <a id="Breweries" href="#breweries">Breweries</a>
-                <a id="Food" href="#food">Food</a>
-                <a id="upload" href="upload">upload</a>
+                <a id="Breweries" href="breweries">Breweries</a>
+                <a id="Recipes" href="recipes">Recipes</a>
+                <a id="upload" href="upload">
+                    <i class="material-icons">upload</i>
+                </a>
+                <!--<a id="upload" href="upload">upload</a>-->
                 
                 
                 @auth

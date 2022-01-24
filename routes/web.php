@@ -16,18 +16,20 @@ use App\Http\Controllers\BeerController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/index');
 
+Route::get('/index', [BeerController::class, 'index']);
 Route::get('/beer', [BeerController::class, 'showBeer']);
 Route::get('/beers', [BeerController::class, 'beers']);
 Route::get('/all', [BeerController::class, 'allBeers']);
+Route::get('/breweries', [BeerController::class, 'breweries']);
+Route::get('/recipes', [BeerController::class, 'recipes']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
 Route::get('/upload', [BeerController::class, 'upload']);
-Route::get('/nameandid', [nameandidcontroller::class, 'nameandidform']);
+//Route::get('/nameandid', [nameandidcontroller::class, 'nameandidform']);
 //Route::view('/nameandid', '/beer/nameandid');
 Route::post('/insertname', [nameandidcontroller::class, 'insertname']);
