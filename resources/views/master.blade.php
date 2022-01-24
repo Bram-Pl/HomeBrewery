@@ -104,17 +104,17 @@ and open the template in the editor.
             function changeActive(object){
                 //window.alert(object.location.pathname);
                 //window.alert(object.location.pathname === '/beers');
-                if(object.location.pathname === '/beers'){
+                if(object.location.pathname === '/index'){
                     document.getElementById('Home').classList.add("active");
                 } else if(object.location.pathname === '/all') {
                     document.getElementById('Beers').classList.add("active");
                 } else if(object.location.pathname === '/upload') {
                     document.getElementById('upload').classList.add("active");
-                } /*else if(object.location.pathname === '/upload') {
-                    document.getElementById('myRecipes').classList.add("active");
-                } else if(object.location.pathname === '/upload') {
-                    document.getElementById('myActiveBrews').classList.add("active");
-                }*/
+                } else if(object.location.pathname === '/recipes') {
+                    document.getElementById('Recipes').classList.add("active");
+                } else if(object.location.pathname === '/breweries') {
+                    document.getElementById('Breweries').classList.add("active");
+                }
             }
         </script>
     </head>
@@ -123,7 +123,9 @@ and open the template in the editor.
             <!--<img class="logo" style="display:inline-block" src="/art/logo.png" alt="Home Brewery Logo">-->
             <div class="row">
                 <div class="column left">
-                    <img class="logo", src="/art/logo.png" alt="Home Brewery Logo">
+                    <a href="index">
+                        <img class="logo", src="/art/logo.png" alt="Home Brewery Logo">
+                    </a>
                 </div>
                 <form class="column middle" action="">
                     <input type="text", id="search", name="search", style="width: 80%; margin-right: 0px;">
@@ -160,10 +162,10 @@ and open the template in the editor.
             </div>
                        
             <div class="topnav">
-                <a id="Home" href="beers">Home</a>
+                <a id="Home" href="index">Home</a>
                 <a id="Beers" href="all">Beers</a>
-                <a id="Breweries" href="#breweries">Breweries</a>
-                <a id="Food" href="#food">Food</a>
+                <a id="Breweries" href="breweries">Breweries</a>
+                <a id="Recipes" href="recipes">Recipes</a>
                 <a id="upload" href="upload">upload</a>
                 
                 

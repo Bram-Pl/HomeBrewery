@@ -18,7 +18,7 @@ class CreateBeersTable extends Migration
             $table->text('name')->default('indefined')->unique();
             $table->text("tagline")->default('indefined');
             $table->string("first_brewed")->default('indefined');
-            $table->string("Description")->default('indefined');
+            $table->string("Description", 400)->default('indefined');
             $table->string("image_url")->default('indefined');
             $table->float("abv")->default('0');
             $table->integer("ibu")->default('0');
