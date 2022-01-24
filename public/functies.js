@@ -81,7 +81,7 @@ function uploadBeerAsyncPost(){
     var yeastAmount = document.getElementById("yeastAmount").value;
     var yeastUnit = document.getElementById("yeastUnit").value;
     var Contributer = document.getElementById("Contributer").value;
-    var url = "http://127.0.0.1:8000/api/BeerPost";
+    var url = "https://howsmybeer.herokuapp.com/api/BeerPost";
     jsonobj = {
             name:name,
             tagline:tagline,
