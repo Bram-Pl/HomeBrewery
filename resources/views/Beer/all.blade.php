@@ -1,7 +1,7 @@
 @extends('master')
 @section('subtitle', 'List Of Beers')
 @section('content')
-    <h3>Beers available on this website.</h3>
+    <h3 style="text-align: center; font-family: unset; font-size: 25pt">Beers available on this website:</h3>
     @foreach ($beers as $beer)
     <!--
     <?php

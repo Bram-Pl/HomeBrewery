@@ -1,7 +1,7 @@
 
 <?php $__env->startSection('subtitle', 'List Of Beers'); ?>
 <?php $__env->startSection('content'); ?>
-    <h3>Beers available on this website.</h3>
+    <h3 style="text-align: center; font-family: unset; font-size: 25pt">Beers available on this website:</h3>
     <?php $__currentLoopData = $beers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $beer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <!--
     <?php

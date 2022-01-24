@@ -100,8 +100,25 @@ and open the template in the editor.
             }
         </style>
         <script type="text/javascript" src="/functies.js"></script>
+        <script type="text/javascript">
+            function changeActive(object){
+                //window.alert(object.location.pathname);
+                //window.alert(object.location.pathname === '/beers');
+                if(object.location.pathname === '/beers'){
+                    document.getElementById('Home').classList.add("active");
+                } else if(object.location.pathname === '/all') {
+                    document.getElementById('Beers').classList.add("active");
+                } else if(object.location.pathname === '/upload') {
+                    document.getElementById('upload').classList.add("active");
+                } /*else if(object.location.pathname === '/upload') {
+                    document.getElementById('myRecipes').classList.add("active");
+                } else if(object.location.pathname === '/upload') {
+                    document.getElementById('myActiveBrews').classList.add("active");
+                }*/
+            }
+        </script>
     </head>
-    <body>
+    <body onload="changeActive(this)">
         <div class="header" >
             <!--<img class="logo" style="display:inline-block" src="/art/logo.png" alt="Home Brewery Logo">-->
             <div class="row">
@@ -141,20 +158,18 @@ and open the template in the editor.
                     @endauth
                 </div>
             </div>
-            
-            
+                       
             <div class="topnav">
-                <a href="beers">Home</a>
-                <a class="active" href="all">Beers</a>
-                <a href="#breweries">Breweries</a>
-                <a href="#food">Food</a>
-                <a href="upload">upload</a>
-                <a href="nameandid">nameandid</a>
+                <a id="Home" href="beers">Home</a>
+                <a id="Beers" href="all">Beers</a>
+                <a id="Breweries" href="#breweries">Breweries</a>
+                <a id="Food" href="#food">Food</a>
+                <a id="upload" href="upload">upload</a>
                 
                 
                 @auth
-                <a class="ifLoggedIn" href="#recipes">My Recipes</a>
-                <a class="ifLoggedIn" href="#activeBrews">My Active Brews</a>
+                <a class="ifLoggedIn" id="myRecipes" href="#recipes">My Recipes</a>
+                <a class="ifLoggedIn" id="myActiveBrews" href="#activeBrews">My Active Brews</a>
                 @else
                 @endauth
             </div>
