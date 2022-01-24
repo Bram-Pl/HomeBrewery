@@ -18,7 +18,7 @@ function uploadNameAsyncPost(){
     var achternaam = document.getElementById("achternaam").value;
     var number = document.getElementById('number').value;
     //alert("deze naam is ontvangen door getelembyid " + name);
-    var url = "http://127.0.0.1:8000/api/nameAndIdPost";
+    var url = "https://howsmybeer.herokuapp.com/api/nameAndIdPost";
     //window.location=url;
     //let request = new XMLHttpRequest();
     jsonobj = {
