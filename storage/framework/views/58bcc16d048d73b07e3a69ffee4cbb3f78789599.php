@@ -143,6 +143,9 @@
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
             </div>
+            <a href="<?php echo e(route('google.login')); ?>" class="btn btn-google btn-user btn-block">
+                <i class="fab fa-google fa-fw"></i> Login with Google
+            </a>
         </form>
      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

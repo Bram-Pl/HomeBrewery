@@ -18,7 +18,7 @@ class CreateReviewsTable extends Migration
             $table->timestamps();
             $table->foreignId('beerId')->constrained('beers');
             $table->text('review');
-            $table->integer('score');
+            $table->float('score');
             $table->foreignId('userId')->constrained('users');
         });
     }

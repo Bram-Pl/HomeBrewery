@@ -3,6 +3,7 @@
 use App\Http\Controllers\nameandidcontroller; 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeerController; 
+use App\Http\Controllers\GoogleController;
 
 
 /*
@@ -33,3 +34,12 @@ Route::get('/upload', [BeerController::class, 'upload']);
 //Route::get('/nameandid', [nameandidcontroller::class, 'nameandidform']);
 //Route::view('/nameandid', '/beer/nameandid');
 Route::post('/insertname', [nameandidcontroller::class, 'insertname']);
+
+// Google Login URL
+Route::prefix('google')->name('google.')->group( function(){
+    Route::get('login', [GoogleController::class, 'loginWithGoogle'])->name('login');
+    Route::any('callback', [GoogleController::class, 'callbackFromGoogle'])->name('callback');
+});
+
+// Redirect home to index.
+Route::get('/index', [BeerController::class, 'index'])->name('home');
