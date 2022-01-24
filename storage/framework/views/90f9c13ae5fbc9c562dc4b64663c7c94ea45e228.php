@@ -8,7 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Home Brewery - @yield("subtitle") </title>
+        <title>Home Brewery - <?php echo $__env->yieldContent("subtitle"); ?> </title>
         <link rel="shortcut icon" type="image/x-icon" href="/art/ico.ico" />
         <link rel="stylesheet" href="/styles.css">
         <style type="text/css">
@@ -135,27 +135,28 @@ and open the template in the editor.
                     echo $user->name;
 
                     echo $user->email;-->
-                    @auth
-                    <p class="user">{{$user->name}}</p>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
+                    <?php if(auth()->guard()->check()): ?>
+                    <p class="user"><?php echo e($user->name); ?></p>
+                    <form method="POST" action="<?php echo e(route('logout')); ?>">
+                        <?php echo csrf_field(); ?>
                         <div class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <a class="nav-link" href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault();
                                         this.closest('form').submit(); " role="button">
                                 <i class="fas fa-sign-out-alt"></i>
 
-                                {{ __('Log Out') }}
+                                <?php echo e(__('Log Out')); ?>
+
                             </a>
                         </div>
                     </form>
-                    @else
-                    <form method="GET" action="{{ route('login') }}">
-                        <a class="btn btn-primary" style="color: #f2f2f2" href="{{ route('login') }}">Login</a><br>
+                    <?php else: ?>
+                    <form method="GET" action="<?php echo e(route('login')); ?>">
+                        <a class="btn btn-primary" style="color: #f2f2f2" href="<?php echo e(route('login')); ?>">Login</a><br>
                     </form>
-                    <form method="GET" action="{{ route('register') }}">
-                        <a class="btn btn-primary" style="color: #f2f2f2" href="{{ route('register') }}">Register</a><br>
+                    <form method="GET" action="<?php echo e(route('register')); ?>">
+                        <a class="btn btn-primary" style="color: #f2f2f2" href="<?php echo e(route('register')); ?>">Register</a><br>
                     </form>
-                    @endauth
+                    <?php endif; ?>
                 </div>
             </div>
                        
@@ -167,18 +168,19 @@ and open the template in the editor.
                 <a id="upload" href="upload">upload</a>
                 
                 
-                @auth
+                <?php if(auth()->guard()->check()): ?>
                 <a class="ifLoggedIn" id="myRecipes" href="#recipes">My Recipes</a>
                 <a class="ifLoggedIn" id="myActiveBrews" href="#activeBrews">My Active Brews</a>
-                @else
-                @endauth
+                <?php else: ?>
+                <?php endif; ?>
             </div>
-            <!--<p>@yield("subtitle")</p>-->
+            <!--<p><?php echo $__env->yieldContent("subtitle"); ?></p>-->
         </div>
         <div>
-            @yield("content")
+            <?php echo $__env->yieldContent("content"); ?>
         </div>
     </body>
 </html>
 
 
+<?php /**PATH C:\development\HomeBrewery\resources\views/master.blade.php ENDPATH**/ ?>

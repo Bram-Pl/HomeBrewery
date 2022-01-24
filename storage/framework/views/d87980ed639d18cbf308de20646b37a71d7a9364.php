@@ -1,8 +1,8 @@
-@extends('master')
-@section('subtitle', 'List Of Beers')
-@section('content')
+
+<?php $__env->startSection('subtitle', 'List Of Beers'); ?>
+<?php $__env->startSection('content'); ?>
     <h3 style="text-align: center; font-family: unset; font-size: 25pt">Beers available on this website:</h3>
-    @foreach ($beers as $beer)
+    <?php $__currentLoopData = $beers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $beer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <!--
     <?php
     $name = $beer->name;
@@ -48,16 +48,16 @@
     
         <div class="displaybeers center">
             <div class="displaybeerscol0">
-                <img src="{{ $beer->image_url }}", alt="{{ $beer->name }}", height=250px>
+                <img src="<?php echo e($beer->image_url); ?>", alt="<?php echo e($beer->name); ?>", height=250px>
             </div>
             <div class="displaybeerscol1 center">
-                <h2>{{ $beer->name }}</h2>
+                <h2><?php echo e($beer->name); ?></h2>
             </div>
             <div class="displaybeercol2 center">
-                <p>{{ $beer->Description }}</p>
+                <p><?php echo e($beer->Description); ?></p>
             </div>
             <div class="displaybeerscol3">
-                <label>{{ $beer-> ph}}</label>
+                <label><?php echo e($beer-> ph); ?></label>
                 <!--<input type="radio" id="star5" name="$name" value="5" />
                 <label for="star5" title="text">5 stars</label>
                 <input type="radio" id="star4" name="$name" value="4" />
@@ -70,6 +70,8 @@
                 <label for="star1" title="text">1 star</label>-->
             </div>
         </div>
-    @endforeach
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\development\HomeBrewery\resources\views/Beer/all.blade.php ENDPATH**/ ?>

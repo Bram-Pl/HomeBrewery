@@ -55,9 +55,6 @@ class BeerController extends Controller
     public function allBeers(){
         $user = Auth::user();
         $beers = DB::select('select * from beers');
-        foreach ($beers as $beer){
-            echo $beer->name;
-        }
         return(view('Beer.all')->with("user",$user)->with("beers",$beers));
     }
     public function upload()
