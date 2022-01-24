@@ -36,7 +36,7 @@
     yeastName <input type="text" name="tips" id="yeastName" value = "5"/><br/>
     yeastAmount <input type="number" name="tips" id="yeastAmount" value = "5"/><br/>
     yeastUnit <input type="text" name="tips" id="yeastUnit" value = "5"/><br/>
-    contributer <input type="text" name="tips" id="Contributer" value = "5"/><br/>
+    contributer <input type="text" name="tips" id="Contributer" value = "1"/><br/>
 
     <input type ="submit" value = "Upload"/>
     <button type ="button" onclick = "uploadBeerAsyncPost()"><strong>upload via javascript met post</strong></button>

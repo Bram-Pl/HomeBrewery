@@ -17,7 +17,7 @@ class CreateMaltTable extends Migration
             $table->id();
             //$table->integer('IngredientsID');
             //$table->foreign('IngredientsID')->references('id')->on('ingredients');            
-            $table->foreignId('IngredientsID')->constrained('ingredients');
+            $table->foreignId('beerID')->constrained('beers');
             $table->string("name");
             $table->float("amount");
             $table->string("unit");

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class malt extends Model
 {
     use HasFactory;
-        public function ingredients(){
-        return $this->belongsTo('App\Models\ingredients');
+    public function beer(){
+        return $this->belongsTo('App\Models\Beer');
     }
 }

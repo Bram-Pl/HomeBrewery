@@ -15,14 +15,10 @@ class CreateHopsTable extends Migration
     {
         Schema::create('hops', function (Blueprint $table) {
             $table->id();
-//            $table->integer('IngredientsID');
-//            $table->foreign('IngredientsID')->references('id')->on('ingredients');
-            $table->foreignId('IngredientsID')->constrained('ingredients');
-            $table->text("name");
+            $table->foreignId('beerID')->constrained('beers');
+            $table->string("name");
             $table->float("amount");
             $table->string("unit");
-            $table->string("add");
-            $table->string("attribute");
         });
     }
 

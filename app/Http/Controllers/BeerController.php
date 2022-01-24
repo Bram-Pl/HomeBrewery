@@ -120,7 +120,8 @@ class BeerController extends Controller
         $yeastAmount = $req->input('yeastAmount');
         $yeastUnit = $req->input('yeastUnit');
         $Contributer = $req->input('Contributer');
-        $data=array('name' => $name,
+        $breweryID = 1;
+        $Beerdata=array('name' => $name,
             'tagline' => $tagline,
             'first_brewed' => $firstbrewed,
             'Description' => $Description,
@@ -136,22 +137,38 @@ class BeerController extends Controller
             'boil_volume' => $boilvolume,        
             'food_pairing' => $foodparings,
             'brewers_tips' => $tips,
-            'malt_name' => $maltName,
-            'malt_amount' => $maltAmount,
-            'malt_unit' => $maltUnit,
-            'hops_name' => $hopsName,
-            'hops_amount' => $hopsAmount,
-            'hops_unit' => $hopsUnit,
-            'yeast_name' => $yeastName,
-            'yeast_amount' => $yeastAmount,
-            'yeast_unit' => $yeastUnit,
             'contributed_by' => $Contributer,
+            'breweryID' => $breweryID,
                 );
+        
+        $beerID = DB::table('beers')->insertGetId($Beerdata);
+        $Hopsdata=array(
+            'beerID' => $beerID,
+            'name' => $hopsName,
+            'amount' => $hopsAmount,
+            'unit' => $hopsUnit,
+        );
+        //console.log($Hopsdata);
+        $hopsID = DB::table('hops')->insertGetId($Hopsdata);
+        $Yeastdata=array(
+            'beerID' => $beerID,
+            'name' => $yeastName,
+            'amount' => $yeastAmount,
+            'unit' => $yeastUnit,
+        );
+        $yeastID = DB::table('yeast')->insertGetId($Yeastdata);
+        $Maltdata=array(
+            'beerID' => $beerID,
+            'name' => $maltName,
+            'amount' => $maltAmount,
+            'unit' => $maltUnit,
+        );
+        $maltID = DB::table('malt')->insertGetId($Maltdata);
+        
+        
+        //$message = json_encode($beerID);
 
-        $id = DB::table('beers')->insertGetId($data);
-        $message = json_encode($id);
-
-
+        $message = json_encode(1);
         //$message = json_encode($data);
         return ($message);
     }

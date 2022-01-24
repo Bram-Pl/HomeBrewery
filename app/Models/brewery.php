@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class hops extends Model
+class brewery extends Model
 {
     use HasFactory;
-    public function beer(){
-        return $this->belongsTo('App\Models\Beer');
+    public function beers(){
+        return $this->hasMany(Beer::class);
     }
 }

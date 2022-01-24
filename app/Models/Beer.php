@@ -14,6 +14,21 @@ class Beer extends Model
         'properties' => 'array'
     ];
     */
+    public function GetHops(){
+        return $this->hasMany(hops::class);
+    }
+    public function GetMalt(){
+        return $this->hasMany(malt::class);
+    }
+    public function GetYeast(){
+        return $this->hasmany(yeast::class);
+    }
+    public function GetBrewery(){
+        return $this->hasOne(brewery::class);
+    }
+    public function GetReviews(){
+        return $this->hasmany(review::class);
+    }
     
     public function getBeer(){
         return "Dorser: Wild Wardje";
