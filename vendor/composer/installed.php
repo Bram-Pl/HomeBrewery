@@ -5,11 +5,20 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4519f0156fa6778875834cdb8496c899bab13a7f',
+        'reference' => '4b1f982079d21ffdfe395f2316b27021cc082d6f',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'artisaninweb/laravel-soap' => array(
+            'pretty_version' => '0.3.0.10',
+            'version' => '0.3.0.10',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../artisaninweb/laravel-soap',
+            'aliases' => array(),
+            'reference' => '809073fe1116e3e3daadcf8571fc58b0a9603574',
+            'dev_requirement' => false,
+        ),
         'asm89/stack-cors' => array(
             'pretty_version' => 'v2.1.1',
             'version' => '2.1.1.0',
@@ -454,7 +463,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4519f0156fa6778875834cdb8496c899bab13a7f',
+            'reference' => '4b1f982079d21ffdfe395f2316b27021cc082d6f',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(

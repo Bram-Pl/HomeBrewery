@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
     'Detection' => array($vendorDir . '/mobiledetect/mobiledetectlib/namespaced'),
+    'Artisaninweb\\SoapWrapper' => array($vendorDir . '/artisaninweb/laravel-soap/src'),
 );

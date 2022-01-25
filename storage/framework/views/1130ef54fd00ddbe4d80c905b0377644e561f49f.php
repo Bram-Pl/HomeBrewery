@@ -30,6 +30,9 @@ and open the template in the editor.
                 padding: 0;
                 background: #1abc9c;
                 min-height: 60px;
+                background-image: url( '/art/header.svg' );
+                background-repeat: no-repeat;
+                background-position-y: 50%;
             }
             .header h1{
                 margin-top: 0;
@@ -203,9 +206,6 @@ and open the template in the editor.
                 <a id="Beers" href="all">Beers</a>
                 <a id="Breweries" href="breweries">Breweries</a>
                 <a id="Recipes" href="recipes">Recipes</a>
-                <a id="upload" href="upload">
-                    <i class="material-icons">upload</i>
-                </a>
                 <a id="SOAP" href="soap">SOAP</a>
                 <!--<a id="upload" href="upload">upload</a>-->
                 
@@ -213,6 +213,9 @@ and open the template in the editor.
                 <?php if(auth()->guard()->check()): ?>
                 <a class="ifLoggedIn" id="myRecipes" href="#recipes">My Recipes</a>
                 <a class="ifLoggedIn" id="myActiveBrews" href="#activeBrews">My Active Brews</a>
+                <a class="ifLoggedIn" id="upload" href="upload">
+                    <i class="material-icons">upload</i>
+                </a>
                 <?php else: ?>
                 <?php endif; ?>
             </div>

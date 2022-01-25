@@ -8,6 +8,8 @@ use App\Models\Beer;
 use App\Models\brewery;
 use Illuminate\Http\Request;
 
+use SoapClient;
+
 use Illuminate\Support\Facades\Auth;
 
 class BeerController extends Controller
@@ -23,10 +25,34 @@ class BeerController extends Controller
         return(view('/index')->with("user",$user));
     }
     
-    public function soap()
-    {
+    public function soap($EBC){
         $user = Auth::user();
-        return(view('/beer.soap')->with("user",$user));
+        $source = intval($EBC);
+        print_r(gettype($source));
+        print_r($source);
+        $options = array(
+            'cache_wsdl' => 0,
+            'trace' => 1,
+            'stream_context' => stream_context_create(array(
+                  'ssl' => array(
+                       'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true
+                  )
+            )));
+        $client = new SoapClient("https://localhost:7139/EBCToRGB.asmx",$options);
+        $params = array(
+            "ebc" => $EBC,
+         );
+        $params2 = array(
+            "kg" => $EBC,
+         );
+
+        $res = $client->__soapCall("EBCConverter", array($params));
+        $res2 = $client->__soapCall("KgConverter", array($params2));
+        $Color = $res->EBCConverterResult;
+        $converted = $res2->KgConverterResult;
+        return(view('/beer.soap')->with("user",$user)->with("Color",$Color)->with("Converted",$converted));
     }
 
     /**

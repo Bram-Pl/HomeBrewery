@@ -579,6 +579,13 @@ class ComposerStaticInit89b18dc1518651ebad3ac32e255c7a5a
                 0 => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/namespaced',
             ),
         ),
+        'A' => 
+        array (
+            'Artisaninweb\\SoapWrapper' => 
+            array (
+                0 => __DIR__ . '/..' . '/artisaninweb/laravel-soap/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
@@ -611,6 +618,7 @@ class ComposerStaticInit89b18dc1518651ebad3ac32e255c7a5a
         'App\\Models\\hops' => __DIR__ . '/../..' . '/app/Models/hops.php',
         'App\\Models\\malt' => __DIR__ . '/../..' . '/app/Models/malt.php',
         'App\\Models\\nameandid' => __DIR__ . '/../..' . '/app/Models/nameandid.php',
+        'App\\Models\\process' => __DIR__ . '/../..' . '/app/Models/process.php',
         'App\\Models\\review' => __DIR__ . '/../..' . '/app/Models/review.php',
         'App\\Models\\yeast' => __DIR__ . '/../..' . '/app/Models/yeast.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
@@ -622,6 +630,14 @@ class ComposerStaticInit89b18dc1518651ebad3ac32e255c7a5a
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\View\\Components\\AppLayout' => __DIR__ . '/../..' . '/app/View/Components/AppLayout.php',
         'App\\View\\Components\\GuestLayout' => __DIR__ . '/../..' . '/app/View/Components/GuestLayout.php',
+        'Artisaninweb\\SoapWrapper\\Client' => __DIR__ . '/..' . '/artisaninweb/laravel-soap/src/Artisaninweb/SoapWrapper/Client.php',
+        'Artisaninweb\\SoapWrapper\\Exceptions\\ServiceAlreadyExists' => __DIR__ . '/..' . '/artisaninweb/laravel-soap/src/Artisaninweb/SoapWrapper/Exceptions/ServiceAlreadyExists.php',
+        'Artisaninweb\\SoapWrapper\\Exceptions\\ServiceMethodNotExists' => __DIR__ . '/..' . '/artisaninweb/laravel-soap/src/Artisaninweb/SoapWrapper/Exceptions/ServiceMethodNotExists.php',
+        'Artisaninweb\\SoapWrapper\\Exceptions\\ServiceNotFound' => __DIR__ . '/..' . '/artisaninweb/laravel-soap/src/Artisaninweb/SoapWrapper/Exceptions/ServiceNotFound.php',
+        'Artisaninweb\\SoapWrapper\\Facade' => __DIR__ . '/..' . '/artisaninweb/laravel-soap/src/Artisaninweb/SoapWrapper/Facade.php',
+        'Artisaninweb\\SoapWrapper\\Service' => __DIR__ . '/..' . '/artisaninweb/laravel-soap/src/Artisaninweb/SoapWrapper/Service.php',
+        'Artisaninweb\\SoapWrapper\\ServiceProvider' => __DIR__ . '/..' . '/artisaninweb/laravel-soap/src/Artisaninweb/SoapWrapper/ServiceProvider.php',
+        'Artisaninweb\\SoapWrapper\\SoapWrapper' => __DIR__ . '/..' . '/artisaninweb/laravel-soap/src/Artisaninweb/SoapWrapper/SoapWrapper.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
