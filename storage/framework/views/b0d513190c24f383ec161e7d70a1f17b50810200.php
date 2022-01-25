@@ -1,8 +1,8 @@
-@extends("master")
-@section("subtitle","upload your recipe")
+
+<?php $__env->startSection("subtitle","upload your recipe"); ?>
 
 
-@section("content")
+<?php $__env->startSection("content"); ?>
 <form action="/UploadBeer" method = "post"> 
     <div class="rowForum">
         <div class="columnForum" style="padding-left: 10%">
@@ -46,7 +46,7 @@
             <button type ="button" onclick = "uploadBeerAsyncPost()"><strong>Upload Recipe</strong></button>
         </div>
     </div>
-    <input type="" id="user_id" name="user_id" value={{$user->id}}>
+    <input type="" id="user_id" name="user_id" value=<?php echo e($user->id); ?>>
     
     <!--
     <script>
@@ -55,4 +55,6 @@
     -->
 </form>
 
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make("master", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\school\cloud\HomeBrewery\resources\views/Beer/BeerForm.blade.php ENDPATH**/ ?>

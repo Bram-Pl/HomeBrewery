@@ -16,10 +16,10 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('beerId')->constrained('beers');
+            $table->foreignId('beerId')->constrained('beers')->onDelete('cascade');
             $table->text('review');
             $table->float('score');
-            $table->foreignId('userId')->constrained('users');
+            $table->foreignId('userId')->constrained('users')->onDelete('cascade');
         });
     }
 

@@ -17,7 +17,7 @@ class CreateYeastTable extends Migration
             $table->id();
             //$table->integer('IngredientsID');
             //$table->foreign('IngredientsID')->references('id')->on('ingredients');            
-            $table->foreignId('beerID')->constrained('beers');
+            $table->foreignId('beerID')->constrained('beers')->onDelete('cascade');
             $table->text('name');
             $table->float('amount');
             $table->text('unit');

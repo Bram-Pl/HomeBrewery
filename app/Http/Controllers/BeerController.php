@@ -18,7 +18,7 @@ class BeerController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return(view('/index')->with("user",$user))->with("id",$id);
+        return(view('/index')->with("user",$user));
     }
     
     public function soap()
@@ -138,7 +138,7 @@ class BeerController extends Controller
         $yeastAmount = $req->input('yeastAmount');
         $yeastUnit = $req->input('yeastUnit');
         $Contributer = $req->input('Contributer');
-        $breweryID = 1;
+        $breweryID = $req->input('brewery');
         $Beerdata=array('name' => $name,
             'tagline' => $tagline,
             'first_brewed' => $firstbrewed,
@@ -155,19 +155,19 @@ class BeerController extends Controller
             'boil_volume' => $boilvolume,        
             'food_pairing' => $foodparings,
             'brewers_tips' => $tips,
+            'brewery' => $breweryID,
             'contributed_by' => $Contributer,
-            'breweryID' => $breweryID,
-                );
-        
+                );        
         $beerID = DB::table('beers')->insertGetId($Beerdata);
+        
         $Hopsdata=array(
             'beerID' => $beerID,
             'name' => $hopsName,
             'amount' => $hopsAmount,
             'unit' => $hopsUnit,
         );
-        //console.log($Hopsdata);
         $hopsID = DB::table('hops')->insertGetId($Hopsdata);
+        
         $Yeastdata=array(
             'beerID' => $beerID,
             'name' => $yeastName,
@@ -175,6 +175,7 @@ class BeerController extends Controller
             'unit' => $yeastUnit,
         );
         $yeastID = DB::table('yeast')->insertGetId($Yeastdata);
+        
         $Maltdata=array(
             'beerID' => $beerID,
             'name' => $maltName,

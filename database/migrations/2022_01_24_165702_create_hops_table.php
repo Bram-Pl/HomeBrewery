@@ -15,7 +15,7 @@ class CreateHopsTable extends Migration
     {
         Schema::create('hops', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('beerID')->constrained('beers');
+            $table->foreignId('beerID')->constrained('beers')->onDelete('cascade');
             $table->string("name");
             $table->float("amount");
             $table->string("unit");

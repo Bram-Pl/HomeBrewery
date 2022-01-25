@@ -33,9 +33,11 @@ class CreateBeersTable extends Migration
 //            $table->json("ingredients");
             $table->string("food_pairing")->default('indefined');
             $table->string("brewers_tips")->default('indefined');           
-            $table->string("type")->default('indefined');
-            $table->foreignId("breweryID")->constrained('breweries');
-            $table->foreignId("contributed_by")->constrained('users');
+            $table->string("type")->default('indefined');  
+            //$table->text('brewery');
+            //$table->foreign('brewery')->nullable()->references('name')->on('breweries');
+            $table->foreignId("brewery")->nullable()->constrained('breweries')->onDelete('cascade');
+            $table->foreignId("contributed_by")->constrained('users')->onDelete('cascade');
         });
     }
 
