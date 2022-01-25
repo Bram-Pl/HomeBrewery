@@ -116,7 +116,7 @@ class BeerController extends Controller
         $mashTempUnit = $req->input('mashTempUnit');
         $mashTime = $req->input('mashTime');
         $mashTimeUnit = $req->input('mashTimeUnit');
-        $foodparings = $req->input('foodparings');
+        $foodpairings = $req->input('foodpairings');
         $tips = $req->input('tips');
         $type= $req->input('type');
         $maltName = $req->input('maltName');
@@ -137,14 +137,10 @@ class BeerController extends Controller
             'image_url' => $imageurl,
             'abv' => $abv,
             'ibu' => $ibu,
-            'target_fg' => $target_fg,
-            'target_og' => $target_og,
             'ebc' => $ebc,
             'srm' => $srm,
             'ph' => $ph,
-            'attenuation_level' => $attenuation,
-            'boil_volume' => $boilvolume,        
-            'food_pairing' => $foodparings,
+            'food_pairing' => $foodpairings,
             'brewers_tips' => $tips,
             'type' => $type,
             'breweries_id' => $breweryID,
@@ -175,6 +171,22 @@ class BeerController extends Controller
             'unit' => $maltUnit,
         );
         $maltID = DB::table('malts')->insertGetId($Maltdata);
+        
+        $Processdata=array(
+            'beer_id' => $beerID,
+            'boilvolume' => $boilvolume,
+            'boilvolumeUnit' => $boilvolumeUnit,  
+            'boilTime' => $boilTime,  
+            'boilTimeUnit' => $boilTimeUnit,  
+            'mashTemp' => $mashTemp,  
+            'mashTempUnit' => $mashTempUnit,  
+            'mashTime' => $mashTime,  
+            'mashTimeUnit' => $mashTimeUnit,
+            'target_fg' => $target_fg,
+            'target_og' => $target_og,
+            'attenuation_level' => $attenuation,
+        );
+        $ProcessID = DB::table('process')->insertGetId($Processdata);
         
         
         //$message = json_encode($beerID);

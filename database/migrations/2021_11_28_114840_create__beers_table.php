@@ -22,12 +22,9 @@ class CreateBeersTable extends Migration
             $table->string("image_url")->default('indefined');
             $table->float("abv")->default('0');
             $table->integer("ibu")->default('0');
-            $table->integer("target_fg")->default('0');
-            $table->integer("target_og")->default('0');
             $table->integer("ebc")->default('0');
             $table->integer("srm")->default('0');
             $table->float("ph")->default('0');
-            $table->float("attenuation_level")->default('0');
             $table->integer("boil_volume")->default('0');
 //            $table->id("method");
 //            $table->json("ingredients");
