@@ -45,7 +45,7 @@
             color: #c59b08;
         }
     </style>-->
-    
+    <a href="/beer/{{ $beer->id }}" style="text-decoration: none; color: black;">
         <div class="displaybeers center">
             <div class="displaybeerscol0">
                 <img src="{{ $beer->image_url }}", alt="{{ $beer->name }}" style="height: 250px; max-width: 350px" >
@@ -70,6 +70,9 @@
                 <label for="star1" title="text">1 star</label>-->
             </div>
         </div>
+    </a>
     @endforeach
-    
+    <div style="margin-bottom: 100px;">
+        
+    </div>
 @stop

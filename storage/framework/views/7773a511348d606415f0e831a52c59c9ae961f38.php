@@ -20,27 +20,27 @@
             ph <input type="text" name="ph" id="ph" value = "5"/><br/>
             attenuation <input type="text" name="attenuation" id="attenuation" value = "5"/><br/>
             boil volume <input type="text" name="boil volume" id="boilvolume" value = "5"/><br/>
-            boil volume unit <input type="text" name="boil volume" id="boilvolumeUnit" value = "5"/><br/>
+            boil volume unit <input type="text" name="boil volume" id="boilvolumeUnit" value = "liters"/><br/>
             boil Time <input type="text" name="boil volume" id="boilTime" value = "5"/><br/>
-            boil Time unit <input type="text" name="boil volume" id="boilTimeUnit" value = "5"/><br/>
+            boil Time unit <input type="text" name="boil volume" id="boilTimeUnit" value = "minutes"/><br/>
         </div>
         <div class="columnForum" style="">
             mash Temp <input type="text" name="boil volume" id="mashTemp" value = "5"/><br/>
-            mash Temp Unit <input type="text" name="boil volume" id="mashTempUnit" value = "5"/><br/>
+            mash Temp Unit <input type="text" name="boil volume" id="mashTempUnit" value = "celsius"/><br/>
             mash Time <input type="text" name="boil volume" id="mashTime" value = "5"/><br/>
-            mash Time unit <input type="text" name="boil volume" id="mashTimeUnit" value = "5"/><br/>
+            mash Time unit <input type="text" name="boil volume" id="mashTimeUnit" value = "minutes"/><br/>
             food pairings <input type="text" name="food pairings" id="foodpairings" value = "5"/><br/>
             tips <input type="text" name="tips" id="tips" value = "5"/><br/>
             type <input type="text" name="type" id="type" value = "5"/><br/>
             maltName <input type="text" name="tips" id="maltName" value = "5"/><br/>
             maltAmount <input type="number" name="tips" id="maltAmount" value = "5"/><br/>
-            maltUnit <input type="text" name="tips" id="maltUnit" value = "5"/><br/>
+            maltUnit <input type="text" name="tips" id="maltUnit" value = "kilogram"/><br/>
             hopsName <input type="text" name="tips" id="hopsName" value = "5"/><br/>
             hopsAmount <input type="number" name="tips" id="hopsAmount" value = "5"/><br/>
-            hopsUnit <input type="text" name="tips" id="hopsUnit" value = "5"/><br/>
+            hopsUnit <input type="text" name="tips" id="hopsUnit" value = "gram"/><br/>
             yeastName <input type="text" name="tips" id="yeastName" value = "5"/><br/>
             yeastAmount <input type="number" name="tips" id="yeastAmount" value = "5"/><br/>
-            yeastUnit <input type="text" name="tips" id="yeastUnit" value = "5"/><br/>
+            yeastUnit <input type="text" name="tips" id="yeastUnit" value = "gram"/><br/>
             contributer <input type="text" name="tips" id="Contributer" value = "1"/><br/>
             Brewery <input type="number" name"breweryID" id="breweryID" value=NULL>
             <!--<input type ="submit" value = "Upload"/>-->
