@@ -45,6 +45,7 @@
                 </x-jet-button>
             </div>
             <br>
+            <x-jet-label for="or" value="or" style="text-align: center"/>
             <div class="flex items-center mt-4" style="justify-content: center;">
                 <a href="{{ route('google.login') }}">
                     <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png">

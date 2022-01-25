@@ -1,3 +1,4 @@
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
@@ -54,6 +55,13 @@
                 <x-jet-button class="ml-4">
                     {{ __('Register') }}
                 </x-jet-button>
+            </div>
+            <br>
+            <x-jet-label for="or" value="or" style="text-align: center"/>
+            <div class="flex items-center mt-4" style="justify-content: center;">
+                <a href="{{ route('google.login') }}">
+                    <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png">
+                </a>
             </div>
         </form>
     </x-jet-authentication-card>
