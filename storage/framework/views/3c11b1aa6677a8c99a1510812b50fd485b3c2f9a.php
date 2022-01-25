@@ -45,7 +45,7 @@
             color: #c59b08;
         }
     </style>-->
-    
+    <a href="/beer/<?php echo e($beer->id); ?>" style="text-decoration: none; color: black;">
         <div class="displaybeers center">
             <div class="displaybeerscol0">
                 <img src="<?php echo e($beer->image_url); ?>", alt="<?php echo e($beer->name); ?>" style="height: 250px; max-width: 350px" >
@@ -70,8 +70,11 @@
                 <label for="star1" title="text">1 star</label>-->
             </div>
         </div>
+    </a>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    
+    <div style="margin-bottom: 100px;">
+        
+    </div>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\development\HomeBrewery\resources\views/Beer/all.blade.php ENDPATH**/ ?>
