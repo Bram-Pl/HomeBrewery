@@ -36,7 +36,7 @@ class CreateBeersTable extends Migration
             $table->string("type")->default('indefined');  
             //$table->text('brewery');
             //$table->foreign('brewery')->nullable()->references('name')->on('breweries');
-            $table->foreignId("brewery")->nullable()->constrained('breweries')->onDelete('cascade');
+            $table->foreignId("breweries_id")->nullable()->references('id')->on('breweries')->onDelete('cascade');
             $table->foreignId("contributed_by")->constrained('users')->onDelete('cascade');
         });
     }

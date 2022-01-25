@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMaltTable extends Migration
+class CreateMaltsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateMaltTable extends Migration
      */
     public function up()
     {
-        Schema::create('malt', function (Blueprint $table) {
+        Schema::create('malts', function (Blueprint $table) {
             $table->id();
             //$table->integer('IngredientsID');
             //$table->foreign('IngredientsID')->references('id')->on('ingredients');            
-            $table->foreignId('beerID')->constrained('beers')->onDelete('cascade');
+            $table->foreignId('beer_id')->references('id')->on('beers')->onDelete('cascade');
             $table->string("name");
             $table->float("amount");
             $table->string("unit");

@@ -48,7 +48,7 @@
     
         <div class="displaybeers center">
             <div class="displaybeerscol0">
-                <img src="{{ $beer->image_url }}", alt="{{ $beer->name }}", height=250px>
+                <img src="{{ $beer->image_url }}", alt="{{ $beer->name }}" style="height: 250px; max-width: 350px" >
             </div>
             <div class="displaybeerscol1 center">
                 <h2>{{ $beer->name }}</h2>
@@ -57,7 +57,7 @@
                 <p>{{ $beer->Description }}</p>
             </div>
             <div class="displaybeerscol3">
-                <label>{{ $beer-> ph}}</label>
+                <p style="font-size: 18pt; font-weight: bold">{{ $beer->abv}} %</p>
                 <!--<input type="radio" id="star5" name="$name" value="5" />
                 <label for="star5" title="text">5 stars</label>
                 <input type="radio" id="star4" name="$name" value="4" />

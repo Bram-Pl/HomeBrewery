@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateYeastTable extends Migration
+class CreateYeastsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateYeastTable extends Migration
      */
     public function up()
     {
-        Schema::create('yeast', function (Blueprint $table) {
+        Schema::create('yeasts', function (Blueprint $table) {
             $table->id();
             //$table->integer('IngredientsID');
             //$table->foreign('IngredientsID')->references('id')->on('ingredients');            
-            $table->foreignId('beerID')->constrained('beers')->onDelete('cascade');
+            $table->foreignId('beer_id')->constrained('beers')->onDelete('cascade');
             $table->text('name');
             $table->float('amount');
             $table->text('unit');

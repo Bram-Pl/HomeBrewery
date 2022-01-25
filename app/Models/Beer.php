@@ -24,7 +24,7 @@ class Beer extends Model
         return $this->hasmany(yeast::class);
     }
     public function GetBrewery(){
-        return $this->hasOne(brewery::class);
+        return $this->belongsTo(brewery::class, 'foreign_key');
     }
     public function GetReviews(){
         return $this->hasmany(review::class);

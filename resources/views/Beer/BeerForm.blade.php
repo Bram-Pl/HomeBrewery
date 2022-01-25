@@ -28,9 +28,10 @@
             mash Temp <input type="text" name="boil volume" id="mashTemp" value = "5"/><br/>
             mash Temp Unit <input type="text" name="boil volume" id="mashTempUnit" value = "5"/><br/>
             mash Time <input type="text" name="boil volume" id="mashTime" value = "5"/><br/>
-            boil volume unit <input type="text" name="boil volume" id="mashTimeUnit" value = "5"/><br/>
-            food parings <input type="text" name="food parings" id="foodparings" value = "5"/><br/>
+            mash Time unit <input type="text" name="boil volume" id="mashTimeUnit" value = "5"/><br/>
+            food pairings <input type="text" name="food parings" id="foodparings" value = "5"/><br/>
             tips <input type="text" name="tips" id="tips" value = "5"/><br/>
+            type <input type="text" name="type" id="type" value = "5"/><br/>
             maltName <input type="text" name="tips" id="maltName" value = "5"/><br/>
             maltAmount <input type="number" name="tips" id="maltAmount" value = "5"/><br/>
             maltUnit <input type="text" name="tips" id="maltUnit" value = "5"/><br/>

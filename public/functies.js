@@ -71,6 +71,7 @@ function uploadBeerAsyncPost(){
     var mashTimeUnit = document.getElementById("mashTimeUnit").value;
     var foodparings = document.getElementById("foodparings").value;
     var tips = document.getElementById("tips").value;
+    var type = document.getElementById("type").value;
     var maltName = document.getElementById("maltName").value;
     var maltAmount = document.getElementById("maltAmount").value;
     var maltUnit = document.getElementById("maltUnit").value;
@@ -108,6 +109,7 @@ function uploadBeerAsyncPost(){
             mashTimeUnit:mashTimeUnit,
             foodparings:foodparings,
             tips:tips,
+            type:type,
             maltName:maltName,
             maltAmount:maltAmount,
             maltUnit:maltUnit,

@@ -74,4 +74,4 @@
     
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\development\HomeBrewery\resources\views/Beer/all.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\development\HomeBrewery\resources\views//beer/all.blade.php ENDPATH**/ ?>

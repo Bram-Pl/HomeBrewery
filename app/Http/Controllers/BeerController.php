@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\Http\Requests;
+use App\Models\Beer;
+use App\Models\brewery;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -35,6 +37,17 @@ class BeerController extends Controller
     public function create()
     {
         // TODO
+    }
+    
+    public function show($id)
+    {
+        $user = Auth::user();
+        $beer = Beer::find($id);
+        $hops = $beer->GetHops;
+        $malt = $beer->GetMalt;
+        $yeast = $beer->GetYeast;
+        
+        return(view('Beer.beer')->with("user",$user)->with("beer",$beer)->with("hops", $hops)->with("malt", $malt)->with("yeast", $yeast));
     }
 
     /**
@@ -79,29 +92,6 @@ class BeerController extends Controller
         $user = Auth::user();
         return(view('Beer.recipes')->with("user",$user));
     }
-    
-    
-    
-    public function InsertBeers(Request $request){
-        $name = $request->input('name');
-        $tagline = $request->input('tagline');
-        $first_brewed = $request->input('first_brewed');
-        $Description = $request->input('Description');
-        $image_url = $request->input('image_url');
-        $abv = $request->input('abv');
-        $ibu = $request->input('ibu');
-        $target_fg = $request->input('target_fg');
-        $target_og = $request->input('target_og');
-        $ebc = $request->input('ebc');
-        $srm = $request->input('srm');
-        $ph = $request->input('ph');
-        $attenuation_level = $request->input('attenuation_level');
-        $boil_volume = $request->input('boil_volume');
-        $ingredients = $request->input('ingredients');
-        $food_pairing = $request->input('food_pairing');
-        $brewers_tips = $request->input('brewers_tips');
-        $contributed_by = $request->input('contributed_by');
-    }
 
     public function insertBeerServicePost(Request $req){
        
@@ -128,6 +118,7 @@ class BeerController extends Controller
         $mashTimeUnit = $req->input('mashTimeUnit');
         $foodparings = $req->input('foodparings');
         $tips = $req->input('tips');
+        $type= $req->input('type');
         $maltName = $req->input('maltName');
         $maltAmount = $req->input('maltAmount');
         $maltUnit = $req->input('maltUnit');
@@ -155,13 +146,14 @@ class BeerController extends Controller
             'boil_volume' => $boilvolume,        
             'food_pairing' => $foodparings,
             'brewers_tips' => $tips,
-            'brewery' => $breweryID,
+            'type' => $type,
+            'breweries_id' => $breweryID,
             'contributed_by' => $Contributer,
                 );        
         $beerID = DB::table('beers')->insertGetId($Beerdata);
         
         $Hopsdata=array(
-            'beerID' => $beerID,
+            'beer_id' => $beerID,
             'name' => $hopsName,
             'amount' => $hopsAmount,
             'unit' => $hopsUnit,
@@ -169,20 +161,20 @@ class BeerController extends Controller
         $hopsID = DB::table('hops')->insertGetId($Hopsdata);
         
         $Yeastdata=array(
-            'beerID' => $beerID,
+            'beer_id' => $beerID,
             'name' => $yeastName,
             'amount' => $yeastAmount,
             'unit' => $yeastUnit,
         );
-        $yeastID = DB::table('yeast')->insertGetId($Yeastdata);
+        $yeastID = DB::table('yeasts')->insertGetId($Yeastdata);
         
         $Maltdata=array(
-            'beerID' => $beerID,
+            'beer_id' => $beerID,
             'name' => $maltName,
             'amount' => $maltAmount,
             'unit' => $maltUnit,
         );
-        $maltID = DB::table('malt')->insertGetId($Maltdata);
+        $maltID = DB::table('malts')->insertGetId($Maltdata);
         
         
         //$message = json_encode($beerID);
