@@ -134,7 +134,7 @@ function uploadBeerAsyncPost(){
                 //alert(data);
          
         } 
-        else {alert("Dikke Faal");}
+        else {alert("Dikke Faal")}
         })
        .then(json => {alert("beer got ID : " +json.beerID);showData(json);});
 

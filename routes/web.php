@@ -25,6 +25,7 @@ Route::get('/beers', [BeerController::class, 'beers']);
 Route::get('/all', [BeerController::class, 'allBeers']);
 Route::get('/breweries', [BeerController::class, 'breweries']);
 Route::get('/recipes', [BeerController::class, 'recipes']);
+Route::get('/soap', [BeerController::class, 'soap']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

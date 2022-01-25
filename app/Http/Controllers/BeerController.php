@@ -20,6 +20,12 @@ class BeerController extends Controller
         $user = Auth::user();
         return(view('/index')->with("user",$user));
     }
+    
+    public function soap()
+    {
+        $user = Auth::user();
+        return(view('/beer.soap')->with("user",$user));
+    }
 
     /**
      * Show the form for creating a new resource.

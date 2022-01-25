@@ -9,29 +9,6 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Home Brewery - @yield("subtitle") </title>
-        
-        <script>
-          window.fbAsyncInit = function() {
-            FB.init({
-              appId      : '{your-app-id}',
-              cookie     : true,
-              xfbml      : true,
-              version    : '{api-version}'
-            });
-
-            FB.AppEvents.logPageView();   
-
-          };
-
-          (function(d, s, id){
-             var js, fjs = d.getElementsByTagName(s)[0];
-             if (d.getElementById(id)) {return;}
-             js = d.createElement(s); js.id = id;
-             js.src = "https://connect.facebook.net/en_US/sdk.js";
-             fjs.parentNode.insertBefore(js, fjs);
-           }(document, 'script', 'facebook-jssdk'));
-        </script>
-        
         <link rel="shortcut icon" type="image/x-icon" href="/art/ico.ico" />
         <link rel="stylesheet" href="/styles.css">
         <style type="text/css">
@@ -170,6 +147,8 @@ and open the template in the editor.
                     document.getElementById('Recipes').classList.add("active");
                 } else if(object.location.pathname === '/breweries') {
                     document.getElementById('Breweries').classList.add("active");
+                } else if(object.location.pathname === '/soap') {
+                    document.getElementById('SOAP').classList.add("active");
                 }
             }
         </script>
@@ -226,6 +205,7 @@ and open the template in the editor.
                 <a id="upload" href="upload">
                     <i class="material-icons">upload</i>
                 </a>
+                <a id="SOAP" href="soap">SOAP</a>
                 <!--<a id="upload" href="upload">upload</a>-->
                 
                 
