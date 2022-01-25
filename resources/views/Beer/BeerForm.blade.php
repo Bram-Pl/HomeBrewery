@@ -45,6 +45,7 @@
             <button type ="button" onclick = "uploadBeerAsyncPost()"><strong>Upload Recipe</strong></button>
         </div>
     </div>
+    <input type="" id="user_id" name="user_id" value={{$user->id}}>
     
     <!--
     <script>

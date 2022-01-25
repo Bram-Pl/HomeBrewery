@@ -18,7 +18,7 @@ class BeerController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return(view('/index')->with("user",$user));
+        return(view('/index')->with("user",$user))->with("id",$id);
     }
     
     public function soap()
@@ -104,6 +104,7 @@ class BeerController extends Controller
     }
 
     public function insertBeerServicePost(Request $req){
+       
         $name = $req->input('name');
         $tagline = $req->input('tagline');
         $firstbrewed = $req->input('firstbrewed');

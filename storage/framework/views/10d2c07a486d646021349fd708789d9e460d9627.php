@@ -2,6 +2,7 @@
 <?php $__env->startSection('content'); ?>
     <?php if(auth()->guard()->check()): ?>
         <h1>Hello <?php echo e($user->name); ?>, welcome back to the Home Brewery website.</h1>
+        <h1>Test id <?php echo e($id); ?></h1>
     <?php else: ?>
         <h1>Welcome to the Home Brewery website.</h1>
     <?php endif; ?>
