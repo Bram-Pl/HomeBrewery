@@ -67,13 +67,49 @@ class BeerController extends Controller
     
     public function show($id)
     {
-        $user = Auth::user();
+        #standard values beer
         $beer = Beer::find($id);
         $hops = $beer->GetHops;
         $malt = $beer->GetMalt;
         $yeast = $beer->GetYeast;
+        $process = $beer->GetProcess;
+        $brewery = brewery::find($beer->breweries_id);
+        $url = $beer->food_pairing;
+        $recipe = file_get_contents($url);
+        $recipe = json_decode($recipe);
         
-        return(view('Beer.beer')->with("user",$user)->with("beer",$beer)->with("hops", $hops)->with("malt", $malt)->with("yeast", $yeast));
+        #perform SOAP Service
+        $EBC = $beer->ebc;
+        $user = Auth::user();
+        $source = intval($EBC);
+        $options = array(
+            'cache_wsdl' => 0,
+            'trace' => 1,
+            'stream_context' => stream_context_create(array(
+                  'ssl' => array(
+                       'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true
+                  )
+            )));
+        $client = new SoapClient("https://localhost:7139/EBCToRGB.asmx",$options);
+        $params = array(
+            "ebc" => $EBC,
+         );
+        $params2 = array(
+            "kg" => $EBC,
+         );
+
+        $res = $client->__soapCall("EBCConverter", array($params));
+        $res2 = $client->__soapCall("KgConverter", array($params2));
+        $Color = $res->EBCConverterResult;
+        $converted = $res2->KgConverterResult;
+        
+        #get reviews
+        $reviews = DB::select('select * from reviews');
+        $users = DB::select('select * from users');
+        
+        return(view('Beer.beer')->with("user",$user)->with("beer",$beer)->with("hops", $hops)->with("malt", $malt)->with("yeast", $yeast)->with("brewery", $brewery)->with("process", $process)->with("recipe", $recipe)->with("url", $url)->with("color", $Color)->with("reviews", $reviews)->with("users", $users));
     }
 
     /**
@@ -111,7 +147,9 @@ class BeerController extends Controller
     public function breweries()
     {
         $user = Auth::user();
-        return(view('Beer.breweries')->with("user",$user));
+        $beers = DB::select('select * from beers');
+        $breweries = DB::select('select * from breweries');
+        return(view('Beer.Breweries')->with("user",$user)->with("beers",$beers)->with("breweries",$breweries));
     }
     public function recipes()
     {

@@ -144,6 +144,34 @@ function uploadBeerAsyncPost(){
 
 }
 
+function uploadReview(beer_id, user_id){
+    var review = document.getElementById("review").value;
+    var score = document.getElementById("score").value;
+    //alert("Beer ID " + beer_id);
+    //alert("User ID " + user_id);
+    //alert("Review " + review);
+    //alert("Score " + score);
+    // http://192.168.1.17:82/Review?comments=piepeloi&score=3&user_id=2&beer_id=1
+    
+    var url = "https://dorser.be:82/Review?comments="+review+"&score="+score+"&user_id="+user_id+"&beer_id="+beer_id;
+    
+    alert(url);
+    
+    fetch(url, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        }
+    })
+    .then(response => {
+        console.log(response)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+    location.reload();
+}
+
 function showData(json){
     alert(json.name);
 }

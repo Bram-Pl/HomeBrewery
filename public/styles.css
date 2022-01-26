@@ -80,3 +80,155 @@ and open the template in the editor.
   display: table;
   clear: both;
 }
+.columnSingleBeer {
+    float: left;
+}
+
+.leftSingleBeer {
+    width: 15%;
+    margin-left: 8%;
+    margin-right: 50px;
+    margin-top: 8%;
+}
+
+.middleSingleBeer {
+    width: 25%;
+}
+
+.rightSingleBeer {
+    width: 35%;
+    margin-right: 5%;
+    margin-left: 15px;
+}
+.imageSingleBeer {
+    max-width:100%;
+    max-height:100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 0 4px 3px rgba(79, 79, 79, 0.5);
+}
+.imageRecipeBeer {
+    width: 3000px;
+    max-height: 400px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 400px;
+    box-shadow: 0 0 4px 3px rgba(79, 79, 79, 0.5);
+}
+.recipeSingleBeerDiv {
+    margin: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.styled-table-recipe {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table-recipe th{
+    padding: 12px 15px;
+    font-size: 18pt;
+}
+.styled-table-recipe td {
+    padding: 12px 15px;
+    padding-left: 60px;
+}
+.styled-table-recipe tdVal {
+    
+}
+.styled-table-recipe tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table-recipe tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table-recipe tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table th{
+    padding: 12px 15px;
+    font-size: 18pt;
+}
+.styled-table td {
+    padding: 12px 15px;
+    padding-left: 60px;
+}
+.styled-table tdVal {
+    
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.bold {
+    font-weight: bold;
+}
+.googlemaps {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 0 4px 3px rgba(79, 79, 79, 0.9);
+}
+
+.box {
+    float: right;
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    clear: both;
+}
+
+
+.styled-table-reviews {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table-reviews th{
+    padding: 12px 15px;
+    font-size: 18pt;
+}
+.styled-table-reviews td {
+    padding: 12px 15px;
+    padding-left: 60px;
+}
+.styled-table-reviews tdVal {
+    
+}
+.styled-table-reviews tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table-reviews tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table-reviews tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+

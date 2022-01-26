@@ -29,6 +29,9 @@ class Beer extends Model
     public function GetReviews(){
         return $this->hasmany(review::class);
     }
+    public function GetProcess(){
+        return $this->hasmany(process::class);
+    }
     
     public function getBeer(){
         return "Dorser: Wild Wardje";

@@ -31,6 +31,6 @@ class CreateYeastsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('yeast');
+        Schema::dropIfExists('yeasts');
     }
 }

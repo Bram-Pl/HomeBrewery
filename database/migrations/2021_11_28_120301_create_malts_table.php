@@ -31,6 +31,6 @@ class CreateMaltsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('malt');
+        Schema::dropIfExists('malts');
     }
 }

@@ -161,7 +161,7 @@ and open the template in the editor.
             <!--<img class="logo" style="display:inline-block" src="/art/logo.png" alt="Home Brewery Logo">-->
             <div class="row">
                 <div class="column left">
-                    <a href="index">
+                    <a href="/index">
                         <img class="logo", src="/art/logo.png" alt="Home Brewery Logo">
                     </a>
                 </div>
@@ -206,7 +206,7 @@ and open the template in the editor.
                 <a id="Beers" href="/all">Beers</a>
                 <a id="Breweries" href="/breweries">Breweries</a>
                 <a id="Recipes" href="/recipes">Recipes</a>
-                <a id="SOAP" href="/soap">SOAP</a>
+                <!--<a id="SOAP" href="/soap">SOAP</a>-->
                 <!--<a id="upload" href="upload">upload</a>-->
                 
                 

@@ -25,7 +25,6 @@ class CreateBeersTable extends Migration
             $table->integer("ebc")->default('0');
             $table->integer("srm")->default('0');
             $table->float("ph")->default('0');
-            $table->integer("boil_volume")->default('0');
 //            $table->id("method");
 //            $table->json("ingredients");
             $table->string("food_pairing")->default('indefined');

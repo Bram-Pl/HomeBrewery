@@ -13,7 +13,7 @@ class CreateProcessTable extends Migration
      */
     public function up()
     {
-        Schema::create('process', function (Blueprint $table) {
+        Schema::create('processes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('beer_id')->constrained('beers')->onDelete('cascade');
             $table->float("boilvolume");
@@ -37,6 +37,6 @@ class CreateProcessTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('process');
+        Schema::dropIfExists('processes');
     }
 }

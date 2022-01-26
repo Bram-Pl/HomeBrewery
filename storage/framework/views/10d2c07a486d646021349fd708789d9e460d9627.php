@@ -2,10 +2,10 @@
 <?php $__env->startSection('subtitle', 'Index'); ?>
 <?php $__env->startSection('content'); ?>
     <?php if(auth()->guard()->check()): ?>
-        <h1>Hello <?php echo e($user->name); ?>, welcome back to the Home Brewery website.</h1>
+        <h1 style='text-align: center'>Hello <?php echo e($user->name); ?>, welcome back to the Home Brewery website.</h1>
 
     <?php else: ?>
-        <h1>Welcome to the Home Brewery website.</h1>
+        <h1 style='text-align: center'>Welcome to the Home Brewery website.</h1>
     <?php endif; ?>
 <?php $__env->stopSection(); ?>
 
