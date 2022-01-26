@@ -14,8 +14,12 @@
                 <?php endif; ?>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         <div style='width: 500px; margin-left: auto; margin-right: auto;'>
-            <iframe class='googlemaps' width="600" height="450" loading="lazy" allowfullscreen
-                    src="https://www.google.com/maps/embed/v1/search?q=<?php echo e($brewery->address); ?>&key=AIzaSyDAC-e6VDcQVG-7kiU2kD-RJtn1Cqkk-M0">
+            <?php
+            $googleKey = getenv('GOOGLE_API_KEY');
+            print_r($googleKey);
+            $url = "https://www.google.com/maps/embed/v1/search?q={$brewery->address}&key={$googleKey}";
+            ?>
+            <iframe class='googlemaps' width="600" height="450" loading="lazy" allowfullscreen src="<?php echo e($url); ?>">
             </iframe>
         </div>
         <br><br>
